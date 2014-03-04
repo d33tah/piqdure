@@ -13,8 +13,8 @@ def main(request):
     """)
 def pics(request):
     our_ip = request.META['REMOTE_ADDR']
-    our_pics = Url.objects.filter(Q(ip__exact=our_ip))[:4]
-    their_pics = Url.objects.filter(~Q(ip__exact=our_ip))[:4]
+    our_pics = Url.objects.filter(Q(ip__exact=our_ip)).order_by('-number')[:4]
+    their_pics = Url.objects.filter(~Q(ip__exact=our_ip)).order_by('-number')[:4]
     return render_to_response('main.html', {'our_pics': our_pics, 'their_pics': their_pics})
 
 def upperbar(request):
