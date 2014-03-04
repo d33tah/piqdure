@@ -1,9 +1,9 @@
+<!DOCTYPE HTML SYSTEM>
 <html>
 <head>
+<title>piqdure></title>
 <meta http-equiv="refresh" content="10" />
-</head>
-<body>
-<style>
+<style type="text/css">
 body {
     height: 800px;
 }
@@ -22,15 +22,18 @@ img {
     width: 100%;
 }
 </style>
+
+</head>
+<body>
 <table>
 <tr>
 {% for pic in our_pics %}
-<td><img src="{{ pic.url }}" /></td>
+<td><img src="{{ pic.url }}" alt=""/></td>
 {% endfor %}
 </tr>
 <tr>
 {% for pic in their_pics %}
-<td><img src="{{ pic.url }}" /></td>
+<td><img src="{{ pic.url }}" alt=""/></td>
 {% endfor %}
 </tr>
 </table>
