@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta http-equiv="refresh" content="10" />
+</head>
+<body>
+<style>
+body {
+    height: 800px;
+}
+tr {
+    height: 33%;
+    max-height: 33%;
+}
+
+td {
+    width: 25%;
+}
+
+img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+</style>
+<table>
+<tr>
+{% for pic in our_pics %}
+<td><img src="{{ pic.url }}" /></td>
+{% endfor %}
+</tr>
+<tr>
+{% for pic in their_pics %}
+<td><img src="{{ pic.url }}" /></td>
+{% endfor %}
+</tr>
+</table>
+</body>
+</html>
