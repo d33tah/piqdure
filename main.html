@@ -4,38 +4,24 @@
 <title>piqdure></title>
 <meta http-equiv="refresh" content="10" />
 <style type="text/css">
-body {
-    height: 800px;
-}
-tr {
-    height: 33%;
-    max-height: 33%;
-}
-
-td {
-    width: 25%;
-}
-
-img {
-    display: block;
+    #photos {
     height: 100%;
-    width: 100%;
-}
+    font-size: 0; /* Remove spaces */
+    }
+    #photos > img{
+        width: 25%;
+        height: 50%;
+    }
+
 </style>
 
 </head>
 <body>
-<table>
-<tr>
-{% for pic in our_pics %}
-<td><img src="{{ pic.url }}" alt=""/></td>
-{% endfor %}
-</tr>
-<tr>
-{% for pic in their_pics %}
-<td><img src="{{ pic.url }}" alt=""/></td>
-{% endfor %}
-</tr>
-</table>
+<div id="photos">
+        {% for pic in our_pics %}<img src="{{ pic.url }}" alt=""/>
+        {% endfor %}
+        {% for pic in their_pics %}<img src="{{ pic.url }}" alt=""/>
+        {% endfor %}
+</div>
 </body>
 </html>
